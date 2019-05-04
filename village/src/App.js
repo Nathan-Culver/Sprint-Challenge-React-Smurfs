@@ -25,10 +25,16 @@ class App extends Component {
     .catch(err => console.log(err));
   }
 
+  getSmurfs(data){
+    this.setState({
+      smurfs : data
+    })
+  }
+
   render() {
     return (
       <div className="App">
-        <SmurfForm />
+        <SmurfForm getSmurfs={this.getSmurfs} />
         <Smurfs smurfs={this.state.smurfs} />
       </div>
     );
